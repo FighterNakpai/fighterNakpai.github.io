@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>นักป้ายยาสู้ชีวิต - รวมของดีราคาคนสู้ชีวิต</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* === VARIABLES === */
+        :root {
+            --primary: #F59E0B;      /* สีส้ม - พลังงาน, ความอบอุ่น */
+            --primary-dark: #D97706;
+            --secondary: #10B981;     /* สีเขียว - การเงิน, ความสดชื่น */
+            --secondary-dark: #059669;
+            --bg: #FFF9F0;             /* สีพื้นหลังครีมอ่อน */
+            --card-bg: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+            --shadow-hover: 0 25px 30px -5px rgba(245, 158, 11, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', 'Sarabun', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* === HEADER === */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 0 0 3rem 3rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .profile-pic span {
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .profile h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile .tagline {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        /* === SOCIAL LINKS === */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* === NAVIGATION === */
+        nav {
+            background: var(--card-bg);
+            border-radius: 2rem;
+            padding: 1rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav a i {
+            color: var(--primary);
+        }
+
+        nav a:hover, nav a.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        nav a:hover i {
+            color: white;
+        }
+
+        /* === POST CARD === */
+        .post-card {
+            background: var(--card-bg);
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-bottom: 5px solid var(--primary);
+        }
+
+        .post-content {
+            padding: 2rem;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .post-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .post-date {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .post-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            white-space: pre-line;
+        }
+
+        .post-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* === PRODUCT BOX (สำหรับลิงก์ Affiliate) === */
+        .product-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px dashed var(--primary);
+            text-align: center;
+        }
+
+        .product-box h3 {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .product-box h3 i {
+            color: var(--primary);
+        }
+
+        .affiliate-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+            border: 2px solid white;
+        }
+
+        .affiliate-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .affiliate-link i {
+            margin-right: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-dark);
+            margin: 0.5rem 0;
+        }
+
+        /* === TAGS / HASHTAGS === */
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed #E5E7EB;
+        }
+
+        .tag {
+            background: #F3F4F6;
+            color: var(--text);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tag i {
+            margin-right: 0.3rem;
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .tag:hover i {
+            color: white;
+        }
+
+        /* === SIDEBAR / WIDGETS (ถ้าอยากเพิ่ม) === */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* === CONTACT SECTION === */
+        .contact-section {
+            background: var(--card-bg);
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .contact-email {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.5rem 2rem;
+            border: 2px dashed var(--primary);
+            border-radius: 3rem;
+        }
+
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-light);
+            border-top: 1px solid #E5E7EB;
+            margin-top: 3rem;
+        }
+
+        footer i {
+            color: #EF4444;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .profile h1 {
+                font-size: 2rem;
+            }
+            
+            .post-title {
+                font-size: 1.5rem;
+            }
+            
+            .post-image {
+                height: 250px;
+            }
+            
+            nav {
+                padding: 1rem;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <div class="profile-pic">
+                    <span>ป.</span>
+                </div>
+                <h1>นักป้ายยาสู้ชีวิต</h1>
+                <div class="tagline">✨ ของดีต้องบอกต่อ...ในราคาคนสู้ชีวิต ✨</div>
+                <div class="social-links">
+                    <a href="https://facebook.com/yourpage" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://line.me/yourprofile" target="_blank" title="LINE"><i class="fab fa-line"></i></a>
+                    <a href="https://shopee.co.th/yourprofile" target="_blank" title="Shopee"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="mailto:fighternakpai@gmail.com" title="อีเมล"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- เมนูนำทาง -->
+        <nav>
+            <a href="#" class="active"><i class="fas fa-home"></i> หน้าแรก</a>
+            <a href="#reviews"><i class="fas fa-star"></i> รีวิวล่าสุด</a>
+            <a href="#products"><i class="fas fa-shopping-cart"></i> รวมของเด็ด</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> ติดต่อ</a>
+        </nav>
+
+        <!-- ส่วนแนะนำตัว -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>รีวิวของจริง</h3>
+                <p>ใช้จริง ซื้อเอง บอกตรงๆ ไม่มีสปอน</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-wallet"></i>
+                <h3>ราคาสู้ชีวิต</h3>
+                <p>คัดมาแล้วว่าราคาจับต้องได้</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-tags"></i>
+                <h3>อัปเดตโปรฯ</h3>
+                <p>แจกพิกัดส่วนลดก่อนใคร</p>
+            </div>
+        </div>
+
+        <!-- ส่วนโพสต์รีวิว (เพิ่มได้เรื่อยๆ) -->
+        <section id="reviews">
+            <h2 style="color: var(--primary); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
+                <i class="fas fa-pen-fancy"></i> รีวิวล่าสุดจากนักป้ายยา
+            </h2>
+
+            <!-- ===== โพสต์ที่ 1: ชั้นวางผ้า ===== -->
+            <div class="post-card">
+                <img src="https://down-th.img.susercontent.com/file/th-11134207-7r98o-lxo69f1v6y6u2b" 
+                     alt="ตะกร้า 4 ชั้น ชั้นวางของ"
+                     class="post-image"
+                     onerror="this.src='https://via.placeholder.com/800x400?text=+%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2+'; this.onerror=null;">
+                
+                <div class="post-content">
+                    <div class="post-header">
+                        <h3 class="post-title">เมื่อชีวิตมันวุ่นวาย อย่างน้อยผ้าเน่าก็ต้องมีที่อยู่! 🧺💥</h3>
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> 5 มีนาคม 2026</span>
+                    </div>
+
+                    <div class="post-text">
+                        <p>ปกติถอดผ้ากองไว้พะเนินจนนึกว่าภูเขาจำลองในบ้าน 🏔️</p>
+                        <p>ลองสั่งไอ้เจ้าตะกร้า 4 ชั้นตัวนี้มาลองดู เพราะราคามันสู้ชีวิตดี (แบงก์แดงไม่กี่ใบ)</p>
+                        <p><strong>✅ สิ่งที่ชอบ:</strong><br>
+                        - มันมีหลายชั้น! ชั้นบนวางแชมพูของกระจุกกระจิก ชั้นล่างใส่ผ้า<br>
+                        ใครที่บ้านรกจนหาพื้นเดินไม่เจอ ลองจัดตัวนี้ไปวางมุมห้องดู ชีวิตเปลี่ยนจริง!</p>
+                    </div>
+
+                    <!-- ปุ่มลิงก์ Affiliate -->
+                    <div class="product-box">
+                        <h3><i class="fas fa-fire"></i> พิกัดของดีสู้ชีวิต</h3>
+                        <div class="product-price">🔥 ราคาแรง! แบงก์แดงไม่กี่ใบ</div>
+                        <a href="https://s.shopee.co.th/60McyNZ1JO" target="_blank" class="affiliate-link">
+                            <i class="fas fa-shopping-cart"></i> จิ้มตรงนี้เลย 👇
+                        </a>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-light);">
+                            <i class="fas fa-link"></i> https://s.shopee.co.th/60McyNZ1JO
+                        </p>
+                    </div>
+
+                    <!-- แฮชแท็ก -->
+                    <div class="post-tags">
+                        <span class="tag"><i class="fas fa-hashtag"></i> นักป้ายยาสู้ชีวิต</span>
+                        <span class="tag"><i class="fas fa-hashtag"></i> fighternakpai</span>
+                        <span class="tag"><i class="fas fa-hashtag"></i> shopeeaffiliate</span>
+                        <span class="tag"><i class="fas fa-hashtag"></i> แนะนำสินค้า</span>
+                        <span class="tag"><i class="fas fa-hashtag"></i> ชั้นวางของ</span>
+                        <span class="tag"><i class="fas fa-hashtag"></i> ตะกร้าใส่ผ้า</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ตัวอย่างโพสต์ที่ 2 (สามารถก็อปปี้เพิ่มได้) ===== -->
+            <!--
+            <div class="post-card">
+                <img src="ลิงก์รูปสินค้าของคุณ" 
+                     alt="ชื่อสินค้า"
+                     class="post-image"
+                     onerror="this.src='https://via.placeholder.com/800x400?text=+%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2';">
+                
+                <div class="post-content">
+                    <div class="post-header">
+                        <h3 class="post-title">หัวข้อรีวิวของคุณ</h3>
+                        <span class="post-date"><i class="far fa-calendar-alt"></i> วันที่</span>
+                    </div>
+
+                    <div class="post-text">
+                        <p>ข้อความรีวิวของคุณ...</p>
+                    </div>
+
+                    <div class="product-box">
+                        <h3><i class="fas fa-fire"></i> พิกัดของดีสู้ชีวิต</h3>
+                        <a href="ลิงก์Affiliateของคุณ" target="_blank" class="affiliate-link">
+                            <i class="fas fa-shopping-cart"></i> จิ้มเลย!
+                        </a>
+                    </div>
+
+                    <div class="post-tags">
+                        <span class="tag"><i class="fas fa-hashtag"></i> นักป้ายยาสู้ชีวิต</span>
+                        <span class="tag"><i class="fas fa-hashtag"></i> fighternakpai</span>
+                    </div>
+                </div>
+            </div>
+            -->
+        </section>
+
+        <!-- ส่วนแนะนำสินค้าเพิ่มเติม (แกลเลอรี) -->
+        <section id="products" style="margin: 3rem 0;">
+            <h2 style="color: var(--primary); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
+                <i class="fas fa-th-large"></i> รวมของเด็ดที่นักป้ายยาต้องมี
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>ชั้นวางผ้า 4 ชั้น</h3>
+                    <p>จัดระเบียบชีวิตง่ายๆ ในราคาสู้ชีวิต</p>
+                    <a href="https://s.shopee.co.th/60McyNZ1JO" target="_blank" style="color: var(--primary); text-decoration: none;">คลิกเลย →</a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-box-open"></i>
+                    <h3>กำลังจะมาเร็วๆ นี้</h3>
+                    <p>รอติดตามสินค้าใหม่ได้เลย</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>โปรโมชันพิเศษ</h3>
+                    <p>อัปเดตส่วนลดก่อนใคร</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ส่วนติดต่อ (ใช้อีเมลตามที่ให้) -->
+        <section id="contact" class="contact-section">
+            <h2><i class="fas fa-paper-plane"></i> ติดต่อนักป้ายยา</h2>
+            <p style="margin-bottom: 1rem;">มีของดีอยากให้รีวิว? หรืออยากแนะนำสินค้า? ทักมาคุยกันได้เลย!</p>
+            <div class="contact-email">
+                <i class="fas fa-envelope"></i> fighternakpai@gmail.com
+            </div>
+            <p style="margin-top: 1.5rem; color: var(--text-light);">
+                <i class="fas fa-clock"></i> ตอบกลับภายใน 24-48 ชม. นะคะ
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 นักป้ายยาสู้ชีวิต | สร้างด้วย <i class="fas fa-heart"></i> เพื่อคนสู้ชีวิตทุกคน</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                <i class="fas fa-envelope"></i> fighternakpai@gmail.com
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
