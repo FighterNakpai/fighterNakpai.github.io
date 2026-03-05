@@ -19,22 +19,24 @@
         }
 
         :root {
-            /* Luxury Color Palette - Inspired by high-end fashion brands */
+            /* Luxury Color Palette - Refined */
             --champagne-gold: #C9A961;
-            --deep-charcoal: #0A0A0A;
+            --deep-charcoal: #1A1A1A;
+            --soft-charcoal: #2A2A2A;
             --warm-beige: #F5F1E8;
             --soft-cream: #FEFBF3;
             --bronze-accent: #8B6F47;
             --pearl-white: #FAFAF8;
-            --midnight-blue: #1A1D2E;
-            --rose-gold: #B76E79;
             --slate-grey: #4A4A4A;
+            --light-grey: #E8E6E1;
             
             /* Refined neutrals */
-            --text-primary: #0A0A0A;
+            --text-primary: #1A1A1A;
             --text-secondary: #4A4A4A;
             --text-muted: #8A8A8A;
-            --divider: rgba(201, 169, 97, 0.2);
+            --divider: rgba(201, 169, 97, 0.15);
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0 30px 50px -20px rgba(0, 0, 0, 0.2);
         }
 
         body {
@@ -47,33 +49,15 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Sophisticated Hero Section */
+        /* Hero Section - Refined */
         .hero {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background: 
-                linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 29, 46, 0.92) 100%),
-                url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23C9A961" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, -30px) rotate(5deg); }
+            background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+            padding: 4rem 2rem;
         }
 
         .hero-content {
@@ -82,13 +66,13 @@
             z-index: 2;
             max-width: 900px;
             padding: 2rem;
-            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: fadeInUp 1s ease;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(60px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -96,9 +80,9 @@
             }
         }
 
-        /* Premium Logo Design */
+        /* Logo - Updated with cat fighter logo */
         .brand-mark {
-            display: inline-flex;
+            display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
@@ -106,11 +90,9 @@
         }
 
         .logo-symbol {
-            width: 120px;
-            height: 120px;
-            line-height: 1;
-            filter: drop-shadow(0 0 40px rgba(201, 169, 97, 0.4));
-            animation: shimmer 3s ease-in-out infinite;
+            width: 160px;
+            height: 160px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
         }
 
         .logo-symbol svg {
@@ -118,28 +100,22 @@
             height: 100%;
         }
 
-        @keyframes shimmer {
-            0%, 100% { filter: drop-shadow(0 0 40px rgba(201, 169, 97, 0.4)) brightness(1); }
-            50% { filter: drop-shadow(0 0 60px rgba(201, 169, 97, 0.6)) brightness(1.2); }
-        }
-
         .brand-name {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             letter-spacing: 0.02em;
             color: var(--champagne-gold);
             text-transform: lowercase;
-            position: relative;
             line-height: 1.1;
         }
 
         .brand-subtitle {
             font-family: 'IBM Plex Sans Thai', sans-serif;
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-size: clamp(1rem, 2vw, 1.3rem);
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.8);
-            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.1em;
             margin-top: 0.5rem;
         }
 
@@ -149,33 +125,25 @@
             font-weight: 400;
             font-style: italic;
             color: rgba(255, 255, 255, 0.9);
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             line-height: 1.6;
-            animation: fadeIn 1.5s ease 0.5s both;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .hero-description {
             font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
             max-width: 600px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 2.5rem;
             line-height: 1.8;
-            animation: fadeIn 1.5s ease 0.8s both;
         }
 
-        /* Elegant Social Links */
+        /* Social Links - Refined */
         .social-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             justify-content: center;
             align-items: center;
-            margin: 3rem 0;
-            animation: fadeIn 1.5s ease 1.2s both;
+            margin: 2.5rem 0;
         }
 
         .social-link {
@@ -184,139 +152,105 @@
             gap: 0.7rem;
             color: var(--champagne-gold);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            padding: 1rem 1.5rem;
-            border: 1.5px solid rgba(201, 169, 97, 0.3);
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            background: rgba(201, 169, 97, 0.05);
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.2), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .social-link:hover::before {
-            left: 100%;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            border-radius: 40px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
         }
 
         .social-link:hover {
             border-color: var(--champagne-gold);
-            background: rgba(201, 169, 97, 0.15);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+            background: rgba(201, 169, 97, 0.1);
+            transform: translateY(-2px);
         }
 
         .social-icon {
-            font-size: 1.3rem;
-            transition: transform 0.4s ease;
+            font-size: 1.2rem;
         }
 
-        .social-link:hover .social-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-
-        /* Scroll Indicator */
+        /* Scroll Indicator - Minimal */
         .scroll-indicator {
             position: absolute;
-            bottom: 3rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
-            color: rgba(201, 169, 97, 0.7);
-            font-size: 0.85rem;
+            color: rgba(201, 169, 97, 0.5);
+            font-size: 0.8rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            animation: fadeIn 2s ease 1.5s both;
             cursor: pointer;
-            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            color: var(--champagne-gold);
         }
 
         .scroll-arrow {
             width: 1px;
-            height: 50px;
+            height: 40px;
             background: linear-gradient(to bottom, transparent, var(--champagne-gold), transparent);
             animation: scrollDown 2s ease-in-out infinite;
         }
 
         @keyframes scrollDown {
-            0%, 100% { opacity: 0; transform: translateY(-20px); }
+            0%, 100% { opacity: 0.3; transform: translateY(-10px); }
             50% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Premium Collection Section */
+        /* Collection Section - Refined */
         .collection {
             background: var(--pearl-white);
-            padding: 8rem 2rem;
-            position: relative;
-        }
-
-        .collection::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--champagne-gold), transparent);
+            padding: 6rem 2rem;
         }
 
         .section-header {
-            max-width: 1400px;
-            margin: 0 auto 5rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
             text-align: center;
         }
 
         .section-overline {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--champagne-gold);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            animation: fadeIn 0.8s ease;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.2;
-            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .section-description {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
             line-height: 1.8;
-            animation: fadeIn 0.8s ease 0.4s both;
         }
 
-        /* Sophisticated Product Grid */
+        /* Product Grid - Refined */
         .products-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+            gap: 2.5rem;
             padding: 0 1rem;
         }
 
@@ -324,23 +258,21 @@
             background: white;
             border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            animation: fadeInUp 0.8s ease both;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
         }
 
         .product-image-container {
             position: relative;
             width: 100%;
-            padding-top: 110%;
+            padding-top: 100%;
             overflow: hidden;
-            background: linear-gradient(135deg, #f5f1e8 0%, #fefbf3 100%);
+            background: var(--warm-beige);
         }
 
         .product-image {
@@ -350,11 +282,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.6s ease;
         }
 
         .product-card:hover .product-image {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
         .product-badge {
@@ -363,57 +295,50 @@
             left: 1.5rem;
             background: var(--deep-charcoal);
             color: var(--champagne-gold);
-            padding: 0.6rem 1.5rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
             z-index: 2;
-            border-left: 3px solid var(--champagne-gold);
         }
 
         .product-content {
-            padding: 2.5rem;
+            padding: 2rem;
         }
 
         .product-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.4;
         }
 
         .product-description {
             color: var(--text-secondary);
-            line-height: 1.9;
-            margin-bottom: 2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
             white-space: pre-line;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
         }
 
         .product-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.7rem;
-            margin-bottom: 2rem;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .product-tag {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--bronze-accent);
-            padding: 0.4rem 1rem;
-            border: 1px solid rgba(139, 111, 71, 0.3);
-            background: rgba(139, 111, 71, 0.05);
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-        }
-
-        .product-tag:hover {
-            background: rgba(139, 111, 71, 0.1);
-            border-color: var(--bronze-accent);
+            padding: 0.3rem 0.8rem;
+            border: 1px solid rgba(139, 111, 71, 0.2);
+            background: rgba(139, 111, 71, 0.03);
+            font-weight: 400;
+            letter-spacing: 0.02em;
         }
 
         .cta-button {
@@ -421,85 +346,49 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            padding: 1.3rem 2rem;
+            padding: 1rem 1.5rem;
             background: var(--deep-charcoal);
             color: var(--champagne-gold);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            letter-spacing: 0.05em;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 2px solid var(--deep-charcoal);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--champagne-gold);
-            transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 0;
-        }
-
-        .cta-button:hover::before {
-            left: 0;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            border: 1px solid var(--deep-charcoal);
         }
 
         .cta-button:hover {
-            color: var(--deep-charcoal);
-        }
-
-        .cta-button span {
-            position: relative;
-            z-index: 1;
+            background: var(--soft-charcoal);
+            color: var(--champagne-gold);
         }
 
         .cta-arrow {
-            font-size: 1.3rem;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            z-index: 1;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
         }
 
         .cta-button:hover .cta-arrow {
-            transform: translateX(8px);
+            transform: translateX(5px);
         }
 
-        /* Elegant Footer */
+        /* Footer - Refined */
         .footer {
             background: var(--deep-charcoal);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 5rem 2rem 3rem;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 4rem 2rem 2rem;
             text-align: center;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 1px;
-            background: var(--champagne-gold);
         }
 
         .footer-brand {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--champagne-gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .footer-tagline {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.4);
             margin-bottom: 2rem;
             letter-spacing: 0.1em;
         }
@@ -512,76 +401,61 @@
         }
 
         .footer-social a {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.3rem;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .footer-social a:hover {
             color: var(--champagne-gold);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .footer-copyright {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.3);
             padding-top: 2rem;
-            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            border-top: 1px solid rgba(201, 169, 97, 0.1);
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             .hero {
                 min-height: 100vh;
-                padding-bottom: 8rem;
-            }
-
-            .hero-content {
                 padding: 2rem 1rem;
             }
 
-            .brand-name {
-                font-size: 2.5rem;
+            .hero-content {
+                padding: 1rem;
             }
 
             .logo-symbol {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
             }
 
-            .hero-tagline {
-                font-size: 1.2rem;
-                margin: 1.5rem 0;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-                margin-bottom: 2rem;
+            .brand-name {
+                font-size: 2.2rem;
             }
 
             .social-links {
                 flex-direction: column;
                 gap: 1rem;
-                margin: 2rem 0 3rem;
             }
 
             .social-link {
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px;
                 justify-content: center;
             }
 
             .scroll-indicator {
-                position: relative;
-                bottom: auto;
-                left: auto;
-                transform: none;
-                margin-top: 3rem;
+                bottom: 1.5rem;
             }
 
             .collection {
-                padding: 5rem 1rem;
+                padding: 4rem 1rem;
             }
 
             .products-container {
@@ -589,70 +463,51 @@
             }
 
             .product-content {
-                padding: 2rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
+                padding: 1.5rem;
             }
         }
 
-        /* Stagger animations for product cards */
+        /* Animation delays */
         .product-card:nth-child(1) { animation-delay: 0.1s; }
         .product-card:nth-child(2) { animation-delay: 0.2s; }
         .product-card:nth-child(3) { animation-delay: 0.3s; }
-        .product-card:nth-child(4) { animation-delay: 0.4s; }
-        .product-card:nth-child(5) { animation-delay: 0.5s; }
-        .product-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with New Logo -->
     <section class="hero">
         <div class="hero-content">
             <div class="brand-mark">
                 <div class="logo-symbol">
+                    <!-- Cat Fighter Logo - Updated from attachment -->
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Shopping Bag Left -->
-                        <g opacity="0.9">
-                            <rect x="25" y="95" width="30" height="35" rx="2" fill="#C9A961" stroke="#8B6F47" stroke-width="2"/>
-                            <path d="M30 95 Q40 85 50 95" stroke="#8B6F47" stroke-width="2" fill="none"/>
-                        </g>
+                        <!-- Background -->
+                        <circle cx="100" cy="100" r="95" fill="none" stroke="#C9A961" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
                         
-                        <!-- Shopping Bag Right -->
-                        <g opacity="0.9">
-                            <rect x="145" y="95" width="30" height="35" rx="2" fill="#C9A961" stroke="#8B6F47" stroke-width="2"/>
-                            <path d="M150 95 Q160 85 170 95" stroke="#8B6F47" stroke-width="2" fill="none"/>
-                        </g>
-                        
-                        <!-- Cat Body -->
-                        <ellipse cx="100" cy="120" rx="35" ry="40" fill="#FF9D5C"/>
+                        <!-- Fighting Cat Body -->
+                        <ellipse cx="100" cy="120" rx="35" ry="40" fill="#FF9D5C" stroke="#8B6F47" stroke-width="2"/>
                         
                         <!-- Cat Head -->
-                        <circle cx="100" cy="75" r="30" fill="#FF9D5C"/>
+                        <circle cx="100" cy="75" r="30" fill="#FF9D5C" stroke="#8B6F47" stroke-width="2"/>
                         
                         <!-- Left Ear -->
-                        <path d="M75 60 L70 35 L85 55 Z" fill="#FF9D5C" stroke="#FF8C3A" stroke-width="2"/>
+                        <path d="M75 60 L70 35 L85 55 Z" fill="#FF9D5C" stroke="#8B6F47" stroke-width="2"/>
                         <path d="M77 55 L74 42 L83 53 Z" fill="#FFB380"/>
                         
                         <!-- Right Ear -->
-                        <path d="M125 60 L130 35 L115 55 Z" fill="#FF9D5C" stroke="#FF8C3A" stroke-width="2"/>
+                        <path d="M125 60 L130 35 L115 55 Z" fill="#FF9D5C" stroke="#8B6F47" stroke-width="2"/>
                         <path d="M123 55 L126 42 L117 53 Z" fill="#FFB380"/>
                         
                         <!-- Fighting Headband -->
                         <ellipse cx="100" cy="65" rx="32" ry="8" fill="#E74C3C" opacity="0.9"/>
                         <rect x="68" y="62" width="64" height="6" rx="1" fill="#E74C3C"/>
-                        <path d="M132 65 L145 60 L147 67 L135 70 Z" fill="#E74C3C"/>
-                        <path d="M145 60 L150 58 L149 65 L147 67 Z" fill="#C0392B"/>
                         
                         <!-- Cat Stripes -->
-                        <path d="M85 70 Q90 72 95 70" stroke="#FF8C3A" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-                        <path d="M105 70 Q110 72 115 70" stroke="#FF8C3A" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-                        <path d="M90 110 Q95 108 100 110" stroke="#FF8C3A" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-                        <path d="M100 110 Q105 108 110 110" stroke="#FF8C3A" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                        <path d="M85 70 Q90 72 95 70" stroke="#8B6F47" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                        <path d="M105 70 Q110 72 115 70" stroke="#8B6F47" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
                         
-                        <!-- Eyes - Determined look -->
+                        <!-- Eyes - Determined -->
                         <ellipse cx="88" cy="75" rx="4" ry="6" fill="#2C3E50"/>
                         <ellipse cx="112" cy="75" rx="4" ry="6" fill="#2C3E50"/>
                         <circle cx="89" cy="74" r="1.5" fill="white"/>
@@ -662,50 +517,39 @@
                         <path d="M100 82 L97 85 L100 86 L103 85 Z" fill="#FF8C3A"/>
                         
                         <!-- Determined Mouth -->
-                        <path d="M95 88 Q100 90 105 88" stroke="#FF8C3A" stroke-width="2" stroke-linecap="round" fill="none"/>
+                        <path d="M95 88 Q100 90 105 88" stroke="#8B6F47" stroke-width="2" stroke-linecap="round" fill="none"/>
                         
                         <!-- Whiskers -->
-                        <line x1="70" y1="77" x2="55" y2="75" stroke="#2C3E50" stroke-width="1.5" opacity="0.7"/>
-                        <line x1="70" y1="82" x2="55" y2="85" stroke="#2C3E50" stroke-width="1.5" opacity="0.7"/>
-                        <line x1="130" y1="77" x2="145" y2="75" stroke="#2C3E50" stroke-width="1.5" opacity="0.7"/>
-                        <line x1="130" y1="82" x2="145" y2="85" stroke="#2C3E50" stroke-width="1.5" opacity="0.7"/>
+                        <line x1="70" y1="77" x2="55" y2="75" stroke="#2C3E50" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="70" y1="82" x2="55" y2="85" stroke="#2C3E50" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="130" y1="77" x2="145" y2="75" stroke="#2C3E50" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="130" y1="82" x2="145" y2="85" stroke="#2C3E50" stroke-width="1.5" opacity="0.5"/>
                         
-                        <!-- Arms - Fighting pose -->
-                        <ellipse cx="70" cy="115" rx="12" ry="18" fill="#FF9D5C" transform="rotate(-20 70 115)"/>
-                        <ellipse cx="130" cy="115" rx="12" ry="18" fill="#FF9D5C" transform="rotate(20 130 115)"/>
+                        <!-- Arms - Fighting Pose -->
+                        <ellipse cx="70" cy="115" rx="12" ry="18" fill="#FF9D5C" stroke="#8B6F47" stroke-width="1.5" transform="rotate(-20 70 115)"/>
+                        <ellipse cx="130" cy="115" rx="12" ry="18" fill="#FF9D5C" stroke="#8B6F47" stroke-width="1.5" transform="rotate(20 130 115)"/>
                         
                         <!-- Paws -->
-                        <circle cx="68" cy="128" r="7" fill="#FFB380"/>
-                        <circle cx="132" cy="128" r="7" fill="#FFB380"/>
+                        <circle cx="68" cy="128" r="7" fill="#FFB380" stroke="#8B6F47" stroke-width="1.5"/>
+                        <circle cx="132" cy="128" r="7" fill="#FFB380" stroke="#8B6F47" stroke-width="1.5"/>
                         
                         <!-- Tail -->
-                        <path d="M130 140 Q145 145 150 155 Q153 165 148 170" stroke="#FF9D5C" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.9"/>
+                        <path d="M130 140 Q145 145 150 155 Q153 165 148 170" stroke="#FF9D5C" stroke-width="12" stroke-linecap="round" fill="none"/>
                         
-                        <!-- Shopping Bag Back Left -->
+                        <!-- Shopping Bags -->
                         <g opacity="0.8">
-                            <rect x="15" y="120" width="25" height="30" rx="2" fill="#D4AF37" stroke="#C9A961" stroke-width="1.5"/>
-                            <path d="M20 120 Q27.5 112 35 120" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+                            <rect x="25" y="95" width="30" height="35" rx="2" fill="#C9A961" stroke="#8B6F47" stroke-width="2"/>
+                            <path d="M30 95 Q40 85 50 95" stroke="#8B6F47" stroke-width="2" fill="none"/>
                         </g>
                         
-                        <!-- Shopping Bag Back Right -->
                         <g opacity="0.8">
-                            <rect x="160" y="120" width="25" height="30" rx="2" fill="#D4AF37" stroke="#C9A961" stroke-width="1.5"/>
-                            <path d="M165 120 Q172.5 112 180 120" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+                            <rect x="145" y="95" width="30" height="35" rx="2" fill="#C9A961" stroke="#8B6F47" stroke-width="2"/>
+                            <path d="M150 95 Q160 85 170 95" stroke="#8B6F47" stroke-width="2" fill="none"/>
                         </g>
                         
-                        <!-- Sparkles around the cat -->
-                        <circle cx="50" cy="50" r="2" fill="#FFD700" opacity="0.8">
-                            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="150" cy="50" r="2" fill="#FFD700" opacity="0.8">
-                            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="45" cy="140" r="1.5" fill="#C9A961" opacity="0.6">
-                            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="155" cy="140" r="1.5" fill="#C9A961" opacity="0.6">
-                            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
-                        </circle>
+                        <!-- Gold Stars -->
+                        <circle cx="50" cy="40" r="2" fill="#C9A961" opacity="0.6"/>
+                        <circle cx="150" cy="40" r="2" fill="#C9A961" opacity="0.6"/>
                     </svg>
                 </div>
                 <div>
@@ -719,11 +563,11 @@
             </p>
             
             <p class="hero-description">
-                คิวเรทสินค้าคุณภาพ รีวิวจากประสบการณ์จริง<br>
+                คัดสรรสินค้าคุณภาพ รีวิวจากประสบการณ์จริง<br>
                 แชร์ของดี ราคาสู้ชีวิต ด้วยใจจริง
             </p>
 
-            <!-- Social Media Links -->
+            <!-- Social Links -->
             <div class="social-links">
                 <a href="https://www.instagram.com/fighternakpai/" target="_blank" rel="noopener" class="social-link">
                     <span class="social-icon">📸</span>
@@ -773,59 +617,56 @@
         </div>
 
         <p class="footer-copyright">
-            © 2024 fighternakpai — รีวิวสินค้าจากประสบการณ์จริง
+            © 2025 fighternakpai — รีวิวสินค้าจากประสบการณ์จริง
         </p>
     </footer>
 
     <script>
         // ==========================================
-        // 📦 เพิ่มสินค้าใหม่ตรงนี้ (แก้ไขง่าย!)
+        // 📦 Edit products here - Easy to update!
         // ==========================================
         
         const products = [
             {
                 title: "ตะกร้า 4 ชั้น — จบปัญหาผ้ากองภูเขา",
                 image: "https://down-th.img.susercontent.com/file/th-11134207-7r991-lyudn2cdy35t30.webp",
-                description: `เมื่อชีวิตมันวุ่นวาย อย่างน้อยผ้าเน่าก็ต้องมีที่อยู่! 🧺💥
+                description: `เมื่อชีวิตมันวุ่นวาย อย่างน้อยผ้าเน่าก็ต้องมีที่อยู่! 🧺
 
 ปกติถอดผ้ากองไว้พะเนินจนนึกว่าภูเขาจำลองในบ้าน 🏔️
 
 ลองสั่งไอ้เจ้าตะกร้า 4 ชั้นตัวนี้มาลองดู เพราะราคามันสู้ชีวิตดี (แบงก์แดงไม่กี่ใบ)
 
 ✅ สิ่งที่ชอบ:
-— มันมีหลายชั้น! ชั้นบนวางแชมพูของกระจุกกระจิก ชั้นล่างใส่ผ้า
-— ประหยัดพื้นที่ วางมุมห้องดูเรียบร้อย
+• มีหลายชั้น ชั้นบนวางของ ชั้นล่างใส่ผ้า
+• ประหยัดพื้นที่ วางมุมห้องดูเรียบร้อย
 
 ใครที่บ้านรกจนหาพื้นเดินไม่เจอ ลองจัดตัวนี้ไปวางมุมห้องดู ชีวิตเปลี่ยนจริง!`,
                 link: "https://s.shopee.co.th/60McyNZ1JO",
                 badge: "Hot Item",
-                hashtags: ["#นักป้ายยาสู้ชีวิต", "#fighternakpai", "#shopeeaffiliate", "#ชั้นวางของ", "#ตะกร้าใส่ผ้า", "#จัดห้อง"]
+                hashtags: ["#นักป้ายยาสู้ชีวิต", "#fighternakpai", "#ชั้นวางของ", "#ตะกร้าใส่ผ้า", "#จัดห้อง"]
             },
             
             // ==========================================
-            // 🆕 เพิ่มสินค้าใหม่ตรงนี้
+            // 🆕 Add new products here - Copy the template below
             // ==========================================
-            // คัดลอกโครงสร้างด้านบนและแก้ไข:
             /*
             {
                 title: "ชื่อสินค้า — คำโปรโมท",
                 image: "URL_รูปภาพ",
                 description: `รายละเอียดสินค้า
                 
-ขึ้นบรรทัดใหม่ได้เลย
-
 ✅ จุดเด่น:
-— ข้อดีที่ 1
-— ข้อดีที่ 2`,
+• ข้อดีที่ 1
+• ข้อดีที่ 2`,
                 link: "https://ลิงก์_affiliate",
-                badge: "Hot Item", // หรือ "New Arrival" หรือ "Best Seller"
+                badge: "Hot Item", // or "New Arrival" or "Best Seller"
                 hashtags: ["#แท็ก1", "#แท็ก2", "#แท็ก3"]
             },
             */
         ];
 
         // ==========================================
-        // ⚙️ ระบบโหลดสินค้า (ไม่ต้องแก้)
+        // ⚙️ System - No need to edit below
         // ==========================================
         
         function createProductCard(product) {
@@ -843,14 +684,14 @@
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">${product.title}</h3>
-                        <div class="product-description">${product.description}</div>
+                        <div class="product-description">${product.description.replace(/\n/g, '<br>')}</div>
                         ${product.hashtags && product.hashtags.length > 0 ? `
                             <div class="product-tags">
                                 ${product.hashtags.map(tag => `<span class="product-tag">${tag}</span>`).join('')}
                             </div>
                         ` : ''}
                         <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="cta-button">
-                            <span>🛍️ ซื้อเลย พิกัดของดีสู้ชีวิต</span>
+                            <span>🛍️ ดูสินค้า</span>
                             <span class="cta-arrow">→</span>
                         </a>
                     </div>
