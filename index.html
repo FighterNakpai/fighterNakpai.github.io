@@ -3,158 +3,751 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>รวมพิกัดของดี - นักป้ายยาสู้ชีวิต</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>fighternakpai — นักป้ายยาสู้ชีวิต | รีวิวสินค้าพรีเมียม</title>
+    <meta name="description" content="คิวเรทสินค้าคุณภาพ รีวิวจากประสบการณ์จริง ราคาสู้ชีวิต">
+    
+    <!-- Fonts: Playfair Display (Editorial) + IBM Plex Sans Thai (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --shopee-orange: #ee4d2d;
-            --bg-color: #f5f5f5;
-            --text-color: #333;
+            /* Luxury Color Palette - Inspired by high-end fashion brands */
+            --champagne-gold: #C9A961;
+            --deep-charcoal: #0A0A0A;
+            --warm-beige: #F5F1E8;
+            --soft-cream: #FEFBF3;
+            --bronze-accent: #8B6F47;
+            --pearl-white: #FAFAF8;
+            --midnight-blue: #1A1D2E;
+            --rose-gold: #B76E79;
+            --slate-grey: #4A4A4A;
+            
+            /* Refined neutrals */
+            --text-primary: #0A0A0A;
+            --text-secondary: #4A4A4A;
+            --text-muted: #8A8A8A;
+            --divider: rgba(201, 169, 97, 0.2);
         }
 
         body {
-            font-family: 'Kanit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
+            font-family: 'IBM Plex Sans Thai', -apple-system, sans-serif;
+            background: var(--soft-cream);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Sophisticated Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 29, 46, 0.92) 100%),
+                url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23C9A961" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -30px) rotate(5deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Premium Logo Design */
+        .brand-mark {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-symbol {
+            font-size: 5rem;
+            line-height: 1;
+            background: linear-gradient(135deg, #C9A961 0%, #FFD700 50%, #C9A961 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 40px rgba(201, 169, 97, 0.4));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { filter: drop-shadow(0 0 40px rgba(201, 169, 97, 0.4)) brightness(1); }
+            50% { filter: drop-shadow(0 0 60px rgba(201, 169, 97, 0.6)) brightness(1.2); }
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            color: var(--champagne-gold);
+            text-transform: lowercase;
+            position: relative;
+            line-height: 1.1;
+        }
+
+        .brand-subtitle {
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.15em;
+            margin-top: 0.5rem;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 2rem 0;
+            line-height: 1.6;
+            animation: fadeIn 1.5s ease 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            animation: fadeIn 1.5s ease 0.8s both;
+        }
+
+        /* Elegant Social Links */
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            margin: 3rem 0;
+            animation: fadeIn 1.5s ease 1.2s both;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: var(--champagne-gold);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1rem 1.5rem;
+            border: 1.5px solid rgba(201, 169, 97, 0.3);
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(201, 169, 97, 0.05);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            border-color: var(--champagne-gold);
+            background: rgba(201, 169, 97, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+
+        .social-icon {
+            font-size: 1.3rem;
+            transition: transform 0.4s ease;
+        }
+
+        .social-link:hover .social-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 0.5rem;
+            color: rgba(201, 169, 97, 0.7);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease 1.5s both;
+            cursor: pointer;
         }
 
-        header {
-            background-color: white;
-            width: 100%;
+        .scroll-arrow {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, transparent, var(--champagne-gold), transparent);
+            animation: scrollDown 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollDown {
+            0%, 100% { opacity: 0; transform: translateY(-20px); }
+            50% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Premium Collection Section */
+        .collection {
+            background: var(--pearl-white);
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .collection::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--champagne-gold), transparent);
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 5rem;
             text-align: center;
-            padding: 30px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
         }
 
-        header h1 {
-            margin: 0;
-            color: var(--shopee-orange);
-            font-size: 28px;
+        .section-overline {
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--champagne-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: fadeIn 0.8s ease;
         }
 
-        header p {
-            margin: 5px 0 0;
-            color: #666;
-            font-size: 14px;
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
-        .container {
-            width: 90%;
-            max-width: 600px;
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: fadeIn 0.8s ease 0.4s both;
         }
 
-        /* ส่วนของบัตรสินค้า (Product Card) */
+        /* Sophisticated Product Grid */
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+            gap: 3rem;
+            padding: 0 1rem;
+        }
+
         .product-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 0;
             overflow: hidden;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            animation: fadeInUp 0.8s ease both;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            padding-top: 110%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f1e8 0%, #fefbf3 100%);
         }
 
         .product-image {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .product-info {
-            padding: 20px;
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: var(--deep-charcoal);
+            color: var(--champagne-gold);
+            padding: 0.6rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 2;
+            border-left: 3px solid var(--champagne-gold);
+        }
+
+        .product-content {
+            padding: 2.5rem;
         }
 
         .product-title {
-            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
             font-weight: 600;
-            margin: 0 0 10px;
-            color: var(--shopee-orange);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
         }
 
-        .product-desc {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 15px;
+        .product-description {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            white-space: pre-line;
+            font-size: 1.05rem;
         }
 
-        .affiliate-button {
-            display: block;
-            background-color: var(--shopee-orange);
-            color: white;
-            text-align: center;
-            padding: 12px;
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-tag {
+            font-size: 0.8rem;
+            color: var(--bronze-accent);
+            padding: 0.4rem 1rem;
+            border: 1px solid rgba(139, 111, 71, 0.3);
+            background: rgba(139, 111, 71, 0.05);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .product-tag:hover {
+            background: rgba(139, 111, 71, 0.1);
+            border-color: var(--bronze-accent);
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.3rem 2rem;
+            background: var(--deep-charcoal);
+            color: var(--champagne-gold);
             text-decoration: none;
-            border-radius: 8px;
             font-weight: 600;
-            transition: background 0.3s;
+            font-size: 1.05rem;
+            letter-spacing: 0.05em;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 2px solid var(--deep-charcoal);
+            position: relative;
+            overflow: hidden;
         }
 
-        .affiliate-button:hover {
-            background-color: #d73211;
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--champagne-gold);
+            transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 0;
         }
 
-        footer {
-            margin: 40px 0;
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            color: var(--deep-charcoal);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-arrow {
+            font-size: 1.3rem;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover .cta-arrow {
+            transform: translateX(8px);
+        }
+
+        /* Elegant Footer */
+        .footer {
+            background: var(--deep-charcoal);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 5rem 2rem 3rem;
             text-align: center;
-            font-size: 12px;
-            color: #999;
+            position: relative;
         }
 
-        footer a {
-            color: #666;
-            text-decoration: none;
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: var(--champagne-gold);
         }
 
-        .contact-box {
-            margin-top: 10px;
-            padding: 10px;
-            background: #eee;
-            border-radius: 5px;
-            display: inline-block;
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--champagne-gold);
+            margin-bottom: 1rem;
         }
+
+        .footer-tagline {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--champagne-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+            }
+
+            .brand-name {
+                font-size: 2.5rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .collection {
+                padding: 5rem 1rem;
+            }
+
+            .products-container {
+                gap: 2rem;
+            }
+
+            .product-content {
+                padding: 2rem;
+            }
+        }
+
+        /* Stagger animations for product cards */
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>🧺 นักป้ายยาสู้ชีวิต</h1>
-    <p>รวมไอเทมลับ พิกัดของดีที่คัดมาแล้วว่าคุ้ม!</p>
-</header>
-
-<div class="container">
-
-    <div class="product-card">
-        <img src="https://down-th.img.susercontent.com/file/th-11134207-7r991-lyudn2cdy35t30.webp" alt="ตะกร้าเก็บผ้าสู้ชีวิต" class="product-image">
-        <div class="product-info">
-            <h2 class="product-title">ตะกร้าเก็บผ้าสู้ชีวิต 3/4/5 ชั้น 🏔️</h2>
-            <div class="product-desc">
-                เมื่อชีวิตมันวุ่นวาย อย่างน้อยผ้าเน่าก็ต้องมีที่อยู่! 🧺💥<br><br>
-                ปกติถอดผ้ากองไว้พะเนินจนนึกว่าภูเขาจำลองในบ้าน ลองสั่งไอ้เจ้าตะกร้า 4 ชั้นตัวนี้มาลองดู เพราะราคามันสู้ชีวิตดี (แบงก์แดงไม่กี่ใบ)<br><br>
-                ✅ <b>สิ่งที่ชอบ:</b><br>
-                - มันมีหลายชั้น! ชั้นบนวางแชมพูของกระจุกกระจิก ชั้นล่างใส่ผ้า<br>
-                - ใครที่บ้านรกจนหาพื้นเดินไม่เจอ ลองจัดตัวนี้ไปวางมุมห้องดู ชีวิตเปลี่ยนจริง!
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="brand-mark">
+                <div class="logo-symbol">💪🏷️</div>
+                <div>
+                    <h1 class="brand-name">fighternakpai</h1>
+                    <p class="brand-subtitle">นักป้ายยาสู้ชีวิต</p>
+                </div>
             </div>
-            <a href="https://s.shopee.co.th/60McyNZ1JO" target="_blank" class="affiliate-button">🛒 จิ้มพิกัดของดีที่ Shopee</a>
-        </div>
-    </div>
-    </div>
+            
+            <p class="hero-tagline">
+                "สู้ชีวิต ซื้อดี ไม่โดนหลอก"
+            </p>
+            
+            <p class="hero-description">
+                คิวเรทสินค้าคุณภาพ รีวิวจากประสบการณ์จริง<br>
+                แชร์ของดี ราคาสู้ชีวิต ด้วยใจจริง
+            </p>
 
-<footer>
-    <div class="contact-box">
-        Contact: <a href="mailto:fighternakpai@gmail.com">fighternakpai@gmail.com</a>
-    </div>
-    <p>© 2026 นักป้ายยาสู้ชีวิต - All Rights Reserved</p>
-</footer>
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/fighternakpai/" target="_blank" rel="noopener" class="social-link">
+                    <span class="social-icon">📸</span>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61571925293862" target="_blank" rel="noopener" class="social-link">
+                    <span class="social-icon">👥</span>
+                    <span>Facebook</span>
+                </a>
+                <a href="mailto:fighternakpai@gmail.com" class="social-link">
+                    <span class="social-icon">✉️</span>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>สำรวจสินค้า</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="collection">
+        <div class="section-header">
+            <div class="section-overline">Curated Selection</div>
+            <h2 class="section-title">สินค้าแนะนำ</h2>
+            <p class="section-description">
+                คัดสรรมาเพื่อคุณโดยเฉพาะ รีวิวจริง ใช้จริง แชร์จริง
+            </p>
+        </div>
+
+        <div class="products-container" id="products-grid">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3 class="footer-brand">fighternakpai</h3>
+        <p class="footer-tagline">นักป้ายยาสู้ชีวิต</p>
+        
+        <div class="footer-social">
+            <a href="https://www.instagram.com/fighternakpai/" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+            <a href="https://www.facebook.com/profile.php?id=61571925293862" target="_blank" rel="noopener" aria-label="Facebook">👥</a>
+            <a href="mailto:fighternakpai@gmail.com" aria-label="Email">✉️</a>
+        </div>
+
+        <p class="footer-copyright">
+            © 2024 fighternakpai — รีวิวสินค้าจากประสบการณ์จริง
+        </p>
+    </footer>
+
+    <script>
+        // ==========================================
+        // 📦 เพิ่มสินค้าใหม่ตรงนี้ (แก้ไขง่าย!)
+        // ==========================================
+        
+        const products = [
+            {
+                title: "ตะกร้า 4 ชั้น — จบปัญหาผ้ากองภูเขา",
+                image: "https://down-th.img.susercontent.com/file/th-11134207-7r991-lyudn2cdy35t30.webp",
+                description: `เมื่อชีวิตมันวุ่นวาย อย่างน้อยผ้าเน่าก็ต้องมีที่อยู่! 🧺💥
+
+ปกติถอดผ้ากองไว้พะเนินจนนึกว่าภูเขาจำลองในบ้าน 🏔️
+
+ลองสั่งไอ้เจ้าตะกร้า 4 ชั้นตัวนี้มาลองดู เพราะราคามันสู้ชีวิตดี (แบงก์แดงไม่กี่ใบ)
+
+✅ สิ่งที่ชอบ:
+— มันมีหลายชั้น! ชั้นบนวางแชมพูของกระจุกกระจิก ชั้นล่างใส่ผ้า
+— ประหยัดพื้นที่ วางมุมห้องดูเรียบร้อย
+
+ใครที่บ้านรกจนหาพื้นเดินไม่เจอ ลองจัดตัวนี้ไปวางมุมห้องดู ชีวิตเปลี่ยนจริง!`,
+                link: "https://s.shopee.co.th/60McyNZ1JO",
+                badge: "Hot Item",
+                hashtags: ["#นักป้ายยาสู้ชีวิต", "#fighternakpai", "#shopeeaffiliate", "#ชั้นวางของ", "#ตะกร้าใส่ผ้า", "#จัดห้อง"]
+            },
+            
+            // ==========================================
+            // 🆕 เพิ่มสินค้าใหม่ตรงนี้
+            // ==========================================
+            // คัดลอกโครงสร้างด้านบนและแก้ไข:
+            /*
+            {
+                title: "ชื่อสินค้า — คำโปรโมท",
+                image: "URL_รูปภาพ",
+                description: `รายละเอียดสินค้า
+                
+ขึ้นบรรทัดใหม่ได้เลย
+
+✅ จุดเด่น:
+— ข้อดีที่ 1
+— ข้อดีที่ 2`,
+                link: "https://ลิงก์_affiliate",
+                badge: "Hot Item", // หรือ "New Arrival" หรือ "Best Seller"
+                hashtags: ["#แท็ก1", "#แท็ก2", "#แท็ก3"]
+            },
+            */
+        ];
+
+        // ==========================================
+        // ⚙️ ระบบโหลดสินค้า (ไม่ต้องแก้)
+        // ==========================================
+        
+        function createProductCard(product) {
+            return `
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img 
+                            src="${product.image}" 
+                            alt="${product.title}"
+                            class="product-image"
+                            loading="lazy"
+                            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Crect fill=%22%23f5f1e8%22 width=%22400%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23C9A961%22 font-size=%2224%22 font-family=%22sans-serif%22%3EImage Not Available%3C/text%3E%3C/svg%3E'"
+                        >
+                        ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">${product.title}</h3>
+                        <div class="product-description">${product.description}</div>
+                        ${product.hashtags && product.hashtags.length > 0 ? `
+                            <div class="product-tags">
+                                ${product.hashtags.map(tag => `<span class="product-tag">${tag}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                        <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="cta-button">
+                            <span>ดูสินค้า</span>
+                            <span class="cta-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+            `;
+        }
+
+        function loadProducts() {
+            const container = document.getElementById('products-grid');
+            if (!container) return;
+            
+            container.innerHTML = products.map(product => createProductCard(product)).join('');
+        }
+
+        // Load products when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadProducts);
+        } else {
+            loadProducts();
+        }
+
+        // Smooth scroll for scroll indicator
+        document.querySelector('.scroll-indicator')?.addEventListener('click', () => {
+            document.querySelector('.collection')?.scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
 
 </body>
 </html>
