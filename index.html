@@ -106,14 +106,16 @@
         }
 
         .logo-symbol {
-            font-size: 5rem;
+            width: 120px;
+            height: 120px;
             line-height: 1;
-            background: linear-gradient(135deg, #C9A961 0%, #FFD700 50%, #C9A961 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             filter: drop-shadow(0 0 40px rgba(201, 169, 97, 0.4));
             animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .logo-symbol svg {
+            width: 100%;
+            height: 100%;
         }
 
         @keyframes shimmer {
@@ -576,7 +578,102 @@
     <section class="hero">
         <div class="hero-content">
             <div class="brand-mark">
-                <div class="logo-symbol">💪🏷️</div>
+                <div class="logo-symbol">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Shopping Bag Left -->
+                        <g opacity="0.9">
+                            <rect x="25" y="95" width="30" height="35" rx="2" fill="#C9A961" stroke="#8B6F47" stroke-width="2"/>
+                            <path d="M30 95 Q40 85 50 95" stroke="#8B6F47" stroke-width="2" fill="none"/>
+                        </g>
+                        
+                        <!-- Shopping Bag Right -->
+                        <g opacity="0.9">
+                            <rect x="145" y="95" width="30" height="35" rx="2" fill="#C9A961" stroke="#8B6F47" stroke-width="2"/>
+                            <path d="M150 95 Q160 85 170 95" stroke="#8B6F47" stroke-width="2" fill="none"/>
+                        </g>
+                        
+                        <!-- Cat Body -->
+                        <ellipse cx="100" cy="120" rx="35" ry="40" fill="#FF9D5C"/>
+                        
+                        <!-- Cat Head -->
+                        <circle cx="100" cy="75" r="30" fill="#FF9D5C"/>
+                        
+                        <!-- Left Ear -->
+                        <path d="M75 60 L70 35 L85 55 Z" fill="#FF9D5C" stroke="#FF8C3A" stroke-width="2"/>
+                        <path d="M77 55 L74 42 L83 53 Z" fill="#FFB380"/>
+                        
+                        <!-- Right Ear -->
+                        <path d="M125 60 L130 35 L115 55 Z" fill="#FF9D5C" stroke="#FF8C3A" stroke-width="2"/>
+                        <path d="M123 55 L126 42 L117 53 Z" fill="#FFB380"/>
+                        
+                        <!-- Fighting Headband -->
+                        <ellipse cx="100" cy="65" rx="32" ry="8" fill="#E74C3C" opacity="0.9"/>
+                        <rect x="68" y="62" width="64" height="6" rx="1" fill="#E74C3C"/>
+                        <path d="M132 65 L145 60 L147 67 L135 70 Z" fill="#E74C3C"/>
+                        <path d="M145 60 L150 58 L149 65 L147 67 Z" fill="#C0392B"/>
+                        
+                        <!-- Cat Stripes -->
+                        <path d="M85 70 Q90 72 95 70" stroke="#FF8C3A" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <path d="M105 70 Q110 72 115 70" stroke="#FF8C3A" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <path d="M90 110 Q95 108 100 110" stroke="#FF8C3A" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                        <path d="M100 110 Q105 108 110 110" stroke="#FF8C3A" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                        
+                        <!-- Eyes - Determined look -->
+                        <ellipse cx="88" cy="75" rx="4" ry="6" fill="#2C3E50"/>
+                        <ellipse cx="112" cy="75" rx="4" ry="6" fill="#2C3E50"/>
+                        <circle cx="89" cy="74" r="1.5" fill="white"/>
+                        <circle cx="113" cy="74" r="1.5" fill="white"/>
+                        
+                        <!-- Nose -->
+                        <path d="M100 82 L97 85 L100 86 L103 85 Z" fill="#FF8C3A"/>
+                        
+                        <!-- Determined Mouth -->
+                        <path d="M95 88 Q100 90 105 88" stroke="#FF8C3A" stroke-width="2" stroke-linecap="round" fill="none"/>
+                        
+                        <!-- Whiskers -->
+                        <line x1="70" y1="77" x2="55" y2="75" stroke="#2C3E50" stroke-width="1.5" opacity="0.7"/>
+                        <line x1="70" y1="82" x2="55" y2="85" stroke="#2C3E50" stroke-width="1.5" opacity="0.7"/>
+                        <line x1="130" y1="77" x2="145" y2="75" stroke="#2C3E50" stroke-width="1.5" opacity="0.7"/>
+                        <line x1="130" y1="82" x2="145" y2="85" stroke="#2C3E50" stroke-width="1.5" opacity="0.7"/>
+                        
+                        <!-- Arms - Fighting pose -->
+                        <ellipse cx="70" cy="115" rx="12" ry="18" fill="#FF9D5C" transform="rotate(-20 70 115)"/>
+                        <ellipse cx="130" cy="115" rx="12" ry="18" fill="#FF9D5C" transform="rotate(20 130 115)"/>
+                        
+                        <!-- Paws -->
+                        <circle cx="68" cy="128" r="7" fill="#FFB380"/>
+                        <circle cx="132" cy="128" r="7" fill="#FFB380"/>
+                        
+                        <!-- Tail -->
+                        <path d="M130 140 Q145 145 150 155 Q153 165 148 170" stroke="#FF9D5C" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.9"/>
+                        
+                        <!-- Shopping Bag Back Left -->
+                        <g opacity="0.8">
+                            <rect x="15" y="120" width="25" height="30" rx="2" fill="#D4AF37" stroke="#C9A961" stroke-width="1.5"/>
+                            <path d="M20 120 Q27.5 112 35 120" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+                        </g>
+                        
+                        <!-- Shopping Bag Back Right -->
+                        <g opacity="0.8">
+                            <rect x="160" y="120" width="25" height="30" rx="2" fill="#D4AF37" stroke="#C9A961" stroke-width="1.5"/>
+                            <path d="M165 120 Q172.5 112 180 120" stroke="#C9A961" stroke-width="1.5" fill="none"/>
+                        </g>
+                        
+                        <!-- Sparkles around the cat -->
+                        <circle cx="50" cy="50" r="2" fill="#FFD700" opacity="0.8">
+                            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="150" cy="50" r="2" fill="#FFD700" opacity="0.8">
+                            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="45" cy="140" r="1.5" fill="#C9A961" opacity="0.6">
+                            <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="155" cy="140" r="1.5" fill="#C9A961" opacity="0.6">
+                            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                </div>
                 <div>
                     <h1 class="brand-name">fighternakpai</h1>
                     <p class="brand-subtitle">นักป้ายยาสู้ชีวิต</p>
@@ -719,7 +816,7 @@
                             </div>
                         ` : ''}
                         <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="cta-button">
-                            <span>ดูสินค้า</span>
+                            <span>🛍️ ซื้อเลย พิกัดของดีสู้ชีวิต</span>
                             <span class="cta-arrow">→</span>
                         </a>
                     </div>
