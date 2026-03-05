@@ -243,6 +243,7 @@
             text-transform: uppercase;
             animation: fadeIn 2s ease 1.5s both;
             cursor: pointer;
+            z-index: 1;
         }
 
         .scroll-arrow {
@@ -532,22 +533,51 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero {
-                min-height: 90vh;
+                min-height: 100vh;
+                padding-bottom: 8rem;
+            }
+
+            .hero-content {
+                padding: 2rem 1rem;
             }
 
             .brand-name {
                 font-size: 2.5rem;
             }
 
+            .logo-symbol {
+                width: 100px;
+                height: 100px;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+                margin: 1.5rem 0;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
             .social-links {
                 flex-direction: column;
                 gap: 1rem;
+                margin: 2rem 0 3rem;
             }
 
             .social-link {
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
+            }
+
+            .scroll-indicator {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: 3rem;
             }
 
             .collection {
@@ -560,6 +590,10 @@
 
             .product-content {
                 padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
             }
         }
 
